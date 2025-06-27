@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .profile-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+        .info {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>Alice Johnson Developer</h1>
+        <div class="info">
+            <p>This is a test profile page for the Profile Enrichment Service.</p>
+            <p>The service should extract the text from the h1 tag above as the full name.</p>
+            <p>Expected extracted name: "Alice Johnson Developer"</p>
+        </div>
+        <div class="info">
+            <h3>About this test page:</h3>
+            <ul>
+                <li>Contains a valid h1 tag with a full name</li>
+                <li>Can be served locally for testing purposes</li>
+                <li>Designed to test the scraping functionality</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
