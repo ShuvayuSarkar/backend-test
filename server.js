@@ -69,7 +69,13 @@ const scrapeProfileData = async (url) => {
     return fullName;
     
   } catch (error) {
-    console.error(`❌ Error scraping URL: ${error.message}`);
+    console.error(`❌ Error scraping URL: ${error.message || 'Unknown error'}`);
+    console.error('Error details:', {
+      code: error.code,
+      name: error.name,
+      message: error.message,
+      stack: error.stack?.split('\n')[0]
+    });
     
     if (error.code === 'ENOTFOUND' || error.code === 'ECONNREFUSED') {
       throw new Error('Unable to connect to the provided URL');
@@ -80,7 +86,7 @@ const scrapeProfileData = async (url) => {
     } else if (error.message === 'No h1 tag found or h1 tag is empty') {
       throw new Error('No h1 tag found or h1 tag is empty');
     } else {
-      throw new Error('Failed to scrape the profile URL');
+      throw new Error(`Failed to scrape the profile URL: ${error.message || error.code || 'Unknown error'}`);
     }
   }
 };
